@@ -31,6 +31,15 @@ app.use(express.static(staticPath));
 //     })
 // })
 
+app.use((err,req, res, next) => {
+    res.status(500);
+    res.send('Internal server error');
+})
+app.use((err, res, req, next) => {
+    console.error(err);
+    next(err);
+})
+
 app.use((req, res) =>{
     res.status(404);
     res.send('File not found!');
