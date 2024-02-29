@@ -11,7 +11,7 @@ var session = require("express-session");
 var routes = require("./routes");
 
 var app = express();
-mongoose.connect("mongodb://localhost:27017/test");
+mongoose.connect("mongodb://localhost:27017/users");
 // setUpPassport();
 
 app.set("port", process.env.PORT || 3000);
